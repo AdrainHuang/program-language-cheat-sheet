@@ -1,0 +1,418 @@
+{
+    "languages": [
+        "Java",
+        "Kotlin",
+        "Go",
+        "Rust",
+        "Groovy",
+        "JavaScript",
+        "TypeScript"
+    ],
+    "features": [
+        {
+            "section": "Core Syntax",
+            "items": [
+                {
+                    "feature": "<strong>Variable Declaration</strong>",
+                    "Java": "<pre><code>String s = \"value\";\nvar s = \"value\";</code></pre>",
+                    "Kotlin": "<pre><code>val s: String = \"value\" // read-only\nvar s = \"value\"</code></pre>",
+                    "Go": "<pre><code>var s string = \"value\"\ns := \"value\"</code></pre>",
+                    "Rust": "<pre><code>let s: &str = \"value\"; // immutable\nlet mut s = \"value\";</code></pre>",
+                    "Groovy": "<pre><code>String s = \"value\"\ndef s = \"value\"</code></pre>",
+                    "JavaScript": "<pre><code>const s = \"value\"; // constant binding\nlet s = \"value\";</code></pre>",
+                    "TypeScript": "<pre><code>const s: string = \"value\";\nlet s: string = \"value\";</code></pre>"
+                },
+                {
+                    "feature": "<strong>Function Definition</strong>",
+                    "Java": "<pre><code>public int add(int a, int b) {\n  return a + b;\n}</code></pre>",
+                    "Kotlin": "<pre><code>fun add(a: Int, b: Int): Int {\n  return a + b\n}</code></pre>",
+                    "Go": "<pre><code>func add(a, b int) int {\n  return a + b\n}</code></pre>",
+                    "Rust": "<pre><code>fn add(a: i32, b: i32) -> i32 {\n  a + b\n}</code></pre>",
+                    "Groovy": "<pre><code>int add(int a, int b) {\n  a + b\n}</code></pre>",
+                    "JavaScript": "<pre><code>function add(a, b) {\n  return a + b;\n}</code></pre>",
+                    "TypeScript": "<pre><code>function add(a: number, b: number): number {\n  return a + b;\n}</code></pre>"
+                },
+                {
+                    "feature": "<strong>Class / Struct Definition</strong>",
+                    "Java": "<pre><code>class Person {\n  String name;\n  Person(String name) {\n    this.name = name;\n  }\n}</code></pre>",
+                    "Kotlin": "<pre><code>class Person(val name: String)</code></pre>",
+                    "Go": "<pre><code>type Person struct {\n  Name string\n}</code></pre>",
+                    "Rust": "<pre><code>struct Person {\n  name: String,\n}</code></pre>",
+                    "Groovy": "<pre><code>class Person {\n  String name\n}</code></pre>",
+                    "JavaScript": "<pre><code>class Person {\n  constructor(name) {\n    this.name = name;\n  }\n}</code></pre>",
+                    "TypeScript": "<pre><code>class Person {\n  name: string;\n  constructor(name: string) {\n    this.name = name;\n  }\n}</code></pre>"
+                },
+                {
+                    "feature": "<strong>Interface / Trait Definition</strong>",
+                    "Java": "<pre><code>interface Greeter {\n  void greet();\n}</code></pre>",
+                    "Kotlin": "<pre><code>interface Greeter {\n  fun greet()\n}</code></pre>",
+                    "Go": "<pre><code>type Greeter interface {\n  Greet()\n}</code></pre>",
+                    "Rust": "<pre><code>trait Greeter {\n  fn greet(&self);\n}</code></pre>",
+                    "Groovy": "<pre><code>trait Greeter {\n  void greet()\n}</code></pre>",
+                    "JavaScript": "N/A",
+                    "TypeScript": "<pre><code>interface Greeter {\n  greet(): void;\n}</code></pre>"
+                },
+                {
+                    "feature": "<strong>String Interpolation</strong>",
+                    "Java": "<pre><code>String.format(\"%s\", name)</code></pre>",
+                    "Kotlin": "<pre><code>\"Hello, $name\"</code></pre>",
+                    "Go": "<pre><code>fmt.Sprintf(\"Hello, %s\", name)</code></pre>",
+                    "Rust": "<pre><code>format!(\"Hello, {}\", name)</code></pre>",
+                    "Groovy": "<pre><code>\"Hello, $name\"</code></pre>",
+                    "JavaScript": "<pre><code>`Hello, ${name}`</code></pre>",
+                    "TypeScript": "<pre><code>`Hello, ${name}`</code></pre>"
+                },
+                {
+                    "feature": "<strong>Array/List Creation</strong>",
+                    "Java": "<pre><code>new ArrayList&lt;String&gt;()</code></pre>",
+                    "Kotlin": "<pre><code>listOf(\"a\", \"b\")</code></pre>",
+                    "Go": "<pre><code>[]string{\"a\", \"b\"}</code></pre>",
+                    "Rust": "<pre><code>vec![\"a\", \"b\"]</code></pre>",
+                    "Groovy": "<pre><code>[\"a\", \"b\"]</code></pre>",
+                    "JavaScript": "<pre><code>[\"a\", \"b\"]</code></pre>",
+                    "TypeScript": "<pre><code>[\"a\", \"b\"]</code></pre>"
+                },
+                {
+                    "feature": "<strong>Map/Dictionary Creation</strong>",
+                    "Java": "<pre><code>new HashMap&lt;String, Integer&gt;()</code></pre>",
+                    "Kotlin": "<pre><code>mapOf(\"one\" to 1)</code></pre>",
+                    "Go": "<pre><code>map[string]int{\"one\": 1}</code></pre>",
+                    "Rust": "<pre><code>HashMap::new()</code></pre>",
+                    "Groovy": "<pre><code>[one: 1]</code></pre>",
+                    "JavaScript": "<pre><code>{ one: 1 }</code></pre>",
+                    "TypeScript": "<pre><code>{ one: 1 }</code></pre>"
+                },
+                {
+                    "feature": "<strong>Looping Over a List</strong>",
+                    "Java": "<pre><code>for (String s : list) {}</code></pre>",
+                    "Kotlin": "<pre><code>for (s in list) {}</code></pre>",
+                    "Go": "<pre><code>for i, s := range slice {}</code></pre>",
+                    "Rust": "<pre><code>for s in &vec {}</code></pre>",
+                    "Groovy": "<pre><code>for (s in list) {}</code></pre>",
+                    "JavaScript": "<pre><code>for (const s of arr) {}</code></pre>",
+                    "TypeScript": "<pre><code>for (const s of arr) {}</code></pre>"
+                },
+                {
+                    "feature": "<strong>Looping Over a Map</strong>",
+                    "Java": "<pre><code>for (var entry : map.entrySet()) {}</code></pre>",
+                    "Kotlin": "<pre><code>for ((k, v) in map) {}</code></pre>",
+                    "Go": "<pre><code>for k, v := range m {}</code></pre>",
+                    "Rust": "<pre><code>for (k, v) in &map {}</code></pre>",
+                    "Groovy": "<pre><code>map.each { k, v -> }</code></pre>",
+                    "JavaScript": "<pre><code>for (const k in obj) {}</code></pre>",
+                    "TypeScript": "<pre><code>for (const k in obj) {}</code></pre>"
+                },
+                {
+                    "feature": "<strong>Conditional Statement</strong>",
+                    "Java": "<pre><code>if (c) {} else {}</code></pre>",
+                    "Kotlin": "<pre><code>if (c) {} else {}</code></pre>",
+                    "Go": "<pre><code>if c {} else {}</code></pre>",
+                    "Rust": "<pre><code>if c {} else {}</code></pre>",
+                    "Groovy": "<pre><code>if (c) {} else {}</code></pre>",
+                    "JavaScript": "<pre><code>if (c) {} else {}</code></pre>",
+                    "TypeScript": "<pre><code>if (c) {} else {}</code></pre>"
+                },
+                {
+                    "feature": "<strong>Error Handling Syntax</strong>",
+                    "Java": "<pre><code>try-catch-finally</code></pre>",
+                    "Kotlin": "<pre><code>try-catch-finally</code></pre>",
+                    "Go": "<pre><code>if err != nil {}</code></pre>",
+                    "Rust": "<pre><code>match result { Ok/Err }</code></pre>",
+                    "Groovy": "<pre><code>try-catch-finally</code></pre>",
+                    "JavaScript": "<pre><code>try-catch-finally</code></pre>",
+                    "TypeScript": "<pre><code>try-catch-finally</code></pre>"
+                }
+            ]
+        },
+        {
+            "section": "Core Syntax (Continued)",
+            "items": [
+                {
+                    "feature": "<strong>Lambda / Anonymous Function</strong>",
+                    "Java": "<pre><code>(a, b) -> a + b</code></pre>",
+                    "Kotlin": "<pre><code>{ a, b -> a + b }</code></pre>",
+                    "Go": "<pre><code>func(a, b int) int {\n  return a + b\n}</code></pre>",
+                    "Rust": "<pre><code>|a, b| a + b</code></pre>",
+                    "Groovy": "<pre><code>{ a, b -> a + b }</code></pre>",
+                    "JavaScript": "<pre><code>(a, b) => a + b</code></pre>",
+                    "TypeScript": "<pre><code>(a: number, b: number): number => a + b</code></pre>"
+                },
+                {
+                    "feature": "<strong>Ternary / Elvis Operator</strong>",
+                    "Java": "<pre><code>condition ? val1 : val2</code></pre>",
+                    "Kotlin": "<pre><code>name ?: \"default\" // Elvis</code></pre>",
+                    "Go": "N/A",
+                    "Rust": "N/A",
+                    "Groovy": "<pre><code>condition ?: val2 // Elvis</code></pre>",
+                    "JavaScript": "<pre><code>condition ? val1 : val2</code></pre>",
+                    "TypeScript": "<pre><code>condition ? val1 : val2</code></pre>"
+                },
+                {
+                    "feature": "<strong>Switch / When / Match</strong>",
+                    "Java": "<pre><code>switch(v) {\n  case 1: ...\n}</code></pre>",
+                    "Kotlin": "<pre><code>when(v) {\n  1 -> ...\n}</code></pre>",
+                    "Go": "<pre><code>switch v {\n  case 1: ...\n}</code></pre>",
+                    "Rust": "<pre><code>match v {\n  1 => ...\n}</code></pre>",
+                    "Groovy": "<pre><code>switch(v) {\n  case 1: ...\n}</code></pre>",
+                    "JavaScript": "<pre><code>switch(v) {\n  case 1: ...\n}</code></pre>",
+                    "TypeScript": "<pre><code>switch(v) {\n  case 1: ...\n}</code></pre>"
+                },
+                {
+                    "feature": "<strong>Type Assertion / Casting</strong>",
+                    "Java": "<pre><code>(String) obj</code></pre>",
+                    "Kotlin": "<pre><code>obj as String</code></pre>",
+                    "Go": "<pre><code>obj.(string)</code></pre>",
+                    "Rust": "<pre><code>obj as i32</code></pre>",
+                    "Groovy": "<pre><code>obj as String</code></pre>",
+                    "JavaScript": "<pre><code>Number(obj)</code></pre>",
+                    "TypeScript": "<pre><code>obj as string</code></pre>"
+                },
+                {
+                    "feature": "<strong>Spawning a Thread/Coroutine</strong>",
+                    "Java": "<pre><code>new Thread(() -> {}).start();</code></pre>",
+                    "Kotlin": "<pre><code>GlobalScope.launch { ... }</code></pre>",
+                    "Go": "<pre><code>go func() { ... }()</code></pre>",
+                    "Rust": "<pre><code>thread::spawn(|| { ... });</code></pre>",
+                    "Groovy": "<pre><code>Thread.start { ... }</code></pre>",
+                    "JavaScript": "<pre><code>new Worker('worker.js');</code></pre>",
+                    "TypeScript": "<pre><code>new Worker('worker.ts');</code></pre>"
+                },
+                {
+                    "feature": "<strong>Promise / Future (Create)</strong>",
+                    "Java": "<pre><code>CompletableFuture.supplyAsync(() -> \"result\")</code></pre>",
+                    "Kotlin": "<pre><code>GlobalScope.async { \"result\" }</code></pre>",
+                    "Go": "N/A (use channels)",
+                    "Rust": "<pre><code>async { \"result\" }</code></pre>",
+                    "Groovy": "<pre><code>Promise.create { \"result\" }</code></pre>",
+                    "JavaScript": "<pre><code>new Promise((resolve, reject) => { ... })</code></pre>",
+                    "TypeScript": "<pre><code>new Promise&lt;string&gt;((resolve, reject) => { ... })</code></pre>"
+                },
+                {
+                    "feature": "<strong>Promise / Future (Await)</strong>",
+                    "Java": "<pre><code>future.get() // blocking</code></pre>",
+                    "Kotlin": "<pre><code>deferred.await()</code></pre>",
+                    "Go": "<pre><code>&lt;-ch // read from channel</code></pre>",
+                    "Rust": "<pre><code>future.await</code></pre>",
+                    "Groovy": "<pre><code>promise.get()</code></pre>",
+                    "JavaScript": "<pre><code>await promise</code></pre>",
+                    "TypeScript": "<pre><code>await promise</code></pre>"
+                },
+                {
+                    "feature": "<strong>Enum Definition</strong>",
+                    "Java": "<pre><code>public enum Color { RED, GREEN }</code></pre>",
+                    "Kotlin": "<pre><code>enum class Color { RED, GREEN }</code></pre>",
+                    "Go": "<pre><code>type Color int\nconst ( RED Color = iota )</code></pre>",
+                    "Rust": "<pre><code>enum Color { Red, Green }</code></pre>",
+                    "Groovy": "<pre><code>enum Color { RED, GREEN }</code></pre>",
+                    "JavaScript": "<pre><code>const Color = { RED: 'red' }</code></pre>",
+                    "TypeScript": "<pre><code>enum Color { Red, Green }</code></pre>"
+                },
+                {
+                    "feature": "<strong>Accessing Array/List Element</strong>",
+                    "Java": "<pre><code>list.get(0);</code></pre>",
+                    "Kotlin": "<pre><code>list[0]</code></pre>",
+                    "Go": "<pre><code>slice[0]</code></pre>",
+                    "Rust": "<pre><code>vec[0]</code></pre>",
+                    "Groovy": "<pre><code>list[0]</code></pre>",
+                    "JavaScript": "<pre><code>arr[0]</code></pre>",
+                    "TypeScript": "<pre><code>arr[0]</code></pre>"
+                },
+                {
+                    "feature": "<strong>Accessing Map/Dict Element</strong>",
+                    "Java": "<pre><code>map.get(\"key\");</code></pre>",
+                    "Kotlin": "<pre><code>map[\"key\"]</code></pre>",
+                    "Go": "<pre><code>m[\"key\"]</code></pre>",
+                    "Rust": "<pre><code>map.get(\"key\")</code></pre>",
+                    "Groovy": "<pre><code>map[\"key\"]</code></pre>",
+                    "JavaScript": "<pre><code>obj[\"key\"]</code></pre>",
+                    "TypeScript": "<pre><code>obj[\"key\"]</code></pre>"
+                },
+                {
+                    "feature": "<strong>Public Member (in class/struct)</strong>",
+                    "Java": "<pre><code>public String name;</code></pre>",
+                    "Kotlin": "<pre><code>val name: String</code></pre>",
+                    "Go": "<pre><code>Name string</code></pre>",
+                    "Rust": "<pre><code>pub name: String</code></pre>",
+                    "Groovy": "<pre><code>String name</code></pre>",
+                    "JavaScript": "<pre><code>this.name</code></pre>",
+                    "TypeScript": "<pre><code>public name: string</code></pre>"
+                },
+                {
+                    "feature": "<strong>Private Member (in class/struct)</strong>",
+                    "Java": "<pre><code>private String name;</code></pre>",
+                    "Kotlin": "<pre><code>private val name: String</code></pre>",
+                    "Go": "<pre><code>name string</code></pre>",
+                    "Rust": "<pre><code>name: String</code></pre>",
+                    "Groovy": "<pre><code>private String name</code></pre>",
+                    "JavaScript": "<pre><code>#name // Stage 3</code></pre>",
+                    "TypeScript": "<pre><code>private name: string</code></pre>"
+                },
+                {
+                    "feature": "<strong>Static/Companion Method</strong>",
+                    "Java": "<pre><code>public static void util() {}</code></pre>",
+                    "Kotlin": "<pre><code>companion object {\n  fun util() {}\n}</code></pre>",
+                    "Go": "N/A (package function)",
+                    "Rust": "<pre><code>impl Person {\n  fn new() -> Person { ... }\n}</code></pre>",
+                    "Groovy": "<pre><code>static void util() {}</code></pre>",
+                    "JavaScript": "<pre><code>static util() {}</code></pre>",
+                    "TypeScript": "<pre><code>static util(): void {}</code></pre>"
+                },
+                {
+                    "feature": "<strong>Importing Modules/Packages</strong>",
+                    "Java": "<pre><code>import java.util.List;</code></pre>",
+                    "Kotlin": "<pre><code>import kotlin.collections.List</code></pre>",
+                    "Go": "<pre><code>import \"fmt\"</code></pre>",
+                    "Rust": "<pre><code>use std::collections::HashMap;</code></pre>",
+                    "Groovy": "<pre><code>import java.util.List</code></pre>",
+                    "JavaScript": "<pre><code>import { something } } from 'module';</code></pre>",
+                    "TypeScript": "<pre><code>import { something } } from 'module';</code></pre>"
+                },
+                {
+                    "feature": "<strong>Multiline String</strong>",
+                    "Java": "<pre><code>\"\"\"\n  line 1\n  line 2\n\"\"\"</code></pre>",
+                    "Kotlin": "<pre><code>\"\"\"\n  line 1\n  line 2\n\"\"\"</code></pre>",
+                    "Go": "<pre><code>`line 1\nline 2`</code></pre>",
+                    "Rust": "<pre><code>\"line 1\\nline 2\"</code></pre>",
+                    "Groovy": "<pre><code>'''\nline 1\nline 2\n'''</code></pre>",
+                    "JavaScript": "<pre><code>`line 1\nline 2`</code></pre>",
+                    "TypeScript": "<pre><code>`line 1\nline 2`</code></pre>"
+                }
+            ]
+        },
+        {
+            "section": "Language Features",
+            "items": [
+                {
+                    "feature": "<strong>Typing System</strong>",
+                    "Java": "Static, Strong",
+                    "Kotlin": "Static, Strong",
+                    "Go": "Static, Strong",
+                    "Rust": "Static, Strong",
+                    "Groovy": "Dynamic (Optional Static)",
+                    "JavaScript": "Dynamic, Weak",
+                    "TypeScript": "Static, Strong"
+                },
+                {
+                    "feature": "<strong>Null Safety</strong>",
+                    "Java": "<code>Optional&lt;T&gt;</code>, Annotations",
+                    "Kotlin": "Built-in (<code>?</code>)",
+                    "Go": "<code>nil</code> for pointers/slices",
+                    "Rust": "<code>Option&lt;T&gt;</code> enum",
+                    "Groovy": "Safe Navigation (<code>?.</code>)",
+                    "JavaScript": "<code>null</code>, <code>undefined</code>",
+                    "TypeScript": "Strict null checks"
+                },
+                {
+                    "feature": "<strong>Concurrency Model</strong>",
+                    "Java": "Threads, Virtual Threads",
+                    "Kotlin": "Coroutines, Channels",
+                    "Go": "Goroutines, Channels",
+                    "Rust": "Async/Await, Threads",
+                    "Groovy": "Threads, GPars",
+                    "JavaScript": "Async/Await, Promises",
+                    "TypeScript": "Async/Await, Promises"
+                },
+                {
+                    "feature": "<strong>Memory Management</strong>",
+                    "Java": "Garbage Collection",
+                    "Kotlin": "Garbage Collection",
+                    "Go": "Garbage Collection",
+                    "Rust": "Ownership & Borrowing",
+                    "Groovy": "Garbage Collection",
+                    "JavaScript": "Garbage Collection",
+                    "TypeScript": "Garbage Collection"
+                },
+                {
+                    "feature": "<strong>Generics</strong>",
+                    "Java": "Yes",
+                    "Kotlin": "Yes",
+                    "Go": "Yes (since 1.18)",
+                    "Rust": "Yes",
+                    "Groovy": "Yes",
+                    "JavaScript": "N/A",
+                    "TypeScript": "Yes"
+                },
+                {
+                    "feature": "<strong>Pattern Matching</strong>",
+                    "Java": "<code>switch</code> expressions",
+                    "Kotlin": "<code>when</code> expressions",
+                    "Go": "<code>switch</code> statement",
+                    "Rust": "<code>match</code> expressions",
+                    "Groovy": "<code>switch</code> statement",
+                    "JavaScript": "<code>switch</code> statement",
+                    "TypeScript": "<code>switch</code> statement"
+                },
+                {
+                    "feature": "<strong>Data Classes / Records</strong>",
+                    "Java": "<code>record</code>",
+                    "Kotlin": "<code>data class</code>",
+                    "Go": "N/A (use structs)",
+                    "Rust": "N/A (use structs)",
+                    "Groovy": "<code>@Canonical</code>",
+                    "JavaScript": "N/A",
+                    "TypeScript": "N/A"
+                },
+                {
+                    "feature": "<strong>Extension Functions</strong>",
+                    "Java": "No",
+                    "Kotlin": "Yes",
+                    "Go": "No",
+                    "Rust": "Yes (via traits)",
+                    "Groovy": "Yes (Metaprogramming)",
+                    "JavaScript": "No (prototype)",
+                    "TypeScript": "No (augmentation)"
+                },
+                {
+                    "feature": "<strong>Immutability by Default</strong>",
+                    "Java": "No (<code>final</code> keyword)",
+                    "Kotlin": "Yes (<code>val</code>)",
+                    "Go": "No",
+                    "Rust": "Yes (<code>let</code>)",
+                    "Groovy": "No",
+                    "JavaScript": "No (<code>const</code> for binding)",
+                    "TypeScript": "No (<code>const</code> for binding)"
+                },
+                {
+                    "feature": "<strong>Type Inference</strong>",
+                    "Java": "<code>var</code> (local variables)",
+                    "Kotlin": "Yes",
+                    "Go": "<code>:=</code>",
+                    "Rust": "Yes",
+                    "Groovy": "Yes (<code>def</code>)",
+                    "JavaScript": "N/A (Dynamic)",
+                    "TypeScript": "Yes"
+                },
+                {
+                    "feature": "<strong>Operator Overloading</strong>",
+                    "Java": "No",
+                    "Kotlin": "Yes",
+                    "Go": "No",
+                    "Rust": "Yes (via traits)",
+                    "Groovy": "Yes",
+                    "JavaScript": "No",
+                    "TypeScript": "No"
+                },
+                {
+                    "feature": "<strong>Metaprogramming</strong>",
+                    "Java": "Reflection, Annotations",
+                    "Kotlin": "Reflection, Annotations",
+                    "Go": "Reflection, Struct Tags",
+                    "Rust": "Macros",
+                    "Groovy": "MOP, AST Transforms",
+                    "JavaScript": "Proxy, Reflect",
+                    "TypeScript": "Decorators"
+                },
+                {
+                    "feature": "<strong>Package Management</strong>",
+                    "Java": "Maven, Gradle",
+                    "Kotlin": "Gradle, Maven",
+                    "Go": "Go Modules",
+                    "Rust": "Cargo",
+                    "Groovy": "Gradle, Maven",
+                    "JavaScript": "npm, yarn, pnpm",
+                    "TypeScript": "npm, yarn, pnpm"
+                }
+            ]
+        }
+    ]
+}
