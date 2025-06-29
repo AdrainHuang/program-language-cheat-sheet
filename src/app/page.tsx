@@ -1,24 +1,34 @@
 
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Fuse from 'fuse.js';
 import data from '../data.json';
 import './globals.css';
 
+interface FeatureItem {
+  feature: string;
+  [key: string]: string; // Add index signature
+}
+
+interface FeatureSection {
+  section: string;
+  items: FeatureItem[];
+}
+
 const Page = () => {
   const [isClient, setIsClient] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const [filteredFeatures, setFilteredFeatures] = useState(data.features);
+  const [filteredFeatures, setFilteredFeatures] = useState<FeatureSection[]>(data.features);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  const fuse = new Fuse(data.features.flatMap(section => section.items), {
+  const fuse = useMemo(() => new Fuse(data.features.flatMap(section => section.items), {
     keys: ['feature'],
     threshold: 0.3,
-  });
+  }), []);
 
   useEffect(() => {
     if (searchTerm === '') {
@@ -35,7 +45,7 @@ const Page = () => {
     })).filter(section => section.items.length > 0);
 
     setFilteredFeatures(newFilteredFeatures);
-  }, [searchTerm]);
+  }, [searchTerm, fuse]);
 
   const tableRows = filteredFeatures.flatMap((section) => [
     <tr key={section.section} className="section-header">
@@ -44,7 +54,7 @@ const Page = () => {
     ...section.items.map((item) => (
       <tr key={item.feature}>
         <td dangerouslySetInnerHTML={{ __html: item.feature }}></td>
-        {data.languages.map((lang) => (
+        {data.languages.map((lang: string) => (
           <td key={lang} dangerouslySetInnerHTML={{ __html: item[lang] || '' }}></td>
         ))}
       </tr>
@@ -83,3 +93,4 @@ const Page = () => {
 };
 
 export default Page;
+
